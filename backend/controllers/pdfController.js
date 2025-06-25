@@ -37,7 +37,6 @@ router.post('/', upload.single('pdf'), async (req, res) => {
         },
       }
     );
-
     fs.unlinkSync(pdfPath);
     res.json({ summary: response.data.choices[0].message.content });
 
